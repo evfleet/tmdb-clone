@@ -5,3 +5,13 @@ declare module "*.scss" {
   const classNames: IClassNames;
   export = classNames;
 }
+
+declare namespace NodeJS {
+  interface Process {
+    browser: boolean;
+  }
+
+  interface Global {
+    fetch: any;
+  }
+}
