@@ -15,7 +15,7 @@ function create(initialState) {
     connectToDevTools: process.browser,
     link: new HttpLink({
       credentials: "same-origin",
-      uri: "/graphql"
+      uri: "http://localhost:3000/graphql"
     }),
     ssrMode: !process.browser
   });
