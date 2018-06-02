@@ -19,11 +19,12 @@
     "graphql-tag": "^2.9.2",
     "graphql-tools": "^3.0.2",
     "isomorphic-unfetch": "^2.0.0",
+    "moment": "^2.22.2",
     "next": "^6.0.3",
+    "promise-redis": "^0.0.5",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
-    "react-dom": "^16.4.0",
-    "redis": "^2.8.0"
+    "react-dom": "^16.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.49",
