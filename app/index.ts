@@ -26,7 +26,7 @@ app.prepare().then(() => {
     bodyParser.json(),
     graphqlExpress({
       context: {
-        movieAPIKey: process.env.MOVIEDB_KEY,
+        apiKey: process.env.MOVIEDB_KEY,
         redis: client
       },
       schema
