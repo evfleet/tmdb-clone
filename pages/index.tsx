@@ -1,10 +1,5 @@
-import Header from "../components/Header";
+import Layout from "../components/Layout";
 
-const Index = () => (
-  <div>
-    <Header />
-    Welcome to the Movies
-  </div>
-);
+const Index = () => <Layout>Welcome to the Movies</Layout>;
 
 export default Index;

@@ -2,7 +2,7 @@ import App, { Container } from "next/app";
 import React from "react";
 import { ApolloProvider } from "react-apollo";
 
-import withApolloClient from "../utils/withApolloClient";
+import withApolloClient from "../helpers/withApolloClient";
 
 class CustomApp extends App {
   private props: any;

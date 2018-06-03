@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation";
 import SearchBar from "./components/SearchBar";
 
 const Header = () => (
-  <header>
+  <div>
     <div className={styles["navigation-content"]}>
       <div>
         <img
@@ -19,7 +19,7 @@ const Header = () => (
     </div>
 
     <SearchBar />
-  </header>
+  </div>
 );
 
 export default Header;
