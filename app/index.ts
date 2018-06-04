@@ -1,10 +1,10 @@
 // tslint:disable-next-line:no-var-requires
 require("dotenv").config();
 
-import { graphiqlExpress, graphqlExpress } from "apollo-server-express";
-import * as bodyParser from "body-parser";
-import * as express from "express";
 import * as next from "next";
+import * as express from "express";
+import * as bodyParser from "body-parser";
+import { graphiqlExpress, graphqlExpress } from "apollo-server-express";
 import * as redis from "promise-redis";
 
 import schema from "./schema";
