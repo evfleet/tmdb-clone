@@ -1,5 +1,3 @@
-import Layout from "../components/Layout";
+import Landing from "../screens/Landing";
 
-const Index = () => <Layout>Welcome to the Movies</Layout>;
-
-export default Index;
+export default () => <Landing />;

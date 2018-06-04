@@ -6,7 +6,6 @@
     "header"
     "main"
     "footer";
-  grid-gap: 10px;
   height: 100vh;
 }
 
@@ -15,7 +14,10 @@
 }
 
 .main {
+  display: flex;
   grid-area: main;
+  justify-content: center;
+  background: #f4f4f4;
 }
 
 .footer {
