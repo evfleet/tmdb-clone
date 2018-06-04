@@ -1,5 +1,4 @@
 export default `
-
   type FeaturedShow {
     id: Int!
     name: String!
