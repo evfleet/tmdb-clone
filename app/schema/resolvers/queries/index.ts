@@ -1,4 +1,4 @@
-import getCurrentMovies from "./getCurrentMovies";
-import getCurrentShows from "./getCurrentShows";
+import getFeaturedMovies from "./getFeaturedMovies";
+import getFeaturedShows from "./getFeaturedShows";
 
-export { getCurrentMovies, getCurrentShows };
+export { getFeaturedMovies, getFeaturedShows };

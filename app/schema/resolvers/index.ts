@@ -1,8 +1,8 @@
-import { getCurrentMovies, getCurrentShows } from "./queries";
+import { getFeaturedMovies, getFeaturedShows } from "./queries";
 
 export default {
   Query: {
-    getCurrentMovies,
-    getCurrentShows
+    getFeaturedMovies,
+    getFeaturedShows
   }
 };

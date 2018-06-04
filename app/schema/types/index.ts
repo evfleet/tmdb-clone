@@ -1,6 +1,6 @@
 export default `
 
-  type CurrentShow {
+  type FeaturedShow {
     id: Int!
     name: String!
     poster_path: String!
@@ -8,7 +8,7 @@ export default `
     next_air_date: String!
   }
 
-  type CurrentMovie {
+  type FeaturedMovie {
     id: Int!
     title: String!
     actors: [String!]!
@@ -16,7 +16,7 @@ export default `
   }
 
   type Query {
-    getCurrentShows: [CurrentShow]!
-    getCurrentMovies: [CurrentMovie]!
+    getFeaturedShows: [FeaturedShow]!
+    getFeaturedMovies: [FeaturedMovie]!
   }
 `;

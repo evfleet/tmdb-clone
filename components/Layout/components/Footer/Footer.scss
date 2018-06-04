@@ -1,3 +1,5 @@
+@import "../../../../styles/variables";
+
 .container {
   display: flex;
   align-items: center;
@@ -14,5 +16,5 @@
 .attribution {
   color: #fff;
   font-size: 1.1em;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: $font-family;
 }

@@ -4,16 +4,16 @@ import { Query } from "react-apollo";
 import Layout from "../../components/Layout";
 import Media from "./components/Media";
 
-const FETCH_HOMEPAGE_CONTENT = gql`
-  query fetchHomePageContent {
-    getCurrentShows {
+const FETCH_FEATURED_CONTENT = gql`
+  query fetchFeaturedContent {
+    getFeaturedShows {
       backdrop_path
       id
       name
       next_air_date
       poster_path
     }
-    getCurrentMovies {
+    getFeaturedMovies {
       id
       title
       backdrop_path
@@ -24,7 +24,7 @@ const FETCH_HOMEPAGE_CONTENT = gql`
 
 const Landing = () => (
   <Layout>
-    <Query query={FETCH_HOMEPAGE_CONTENT}>
+    <Query query={FETCH_FEATURED_CONTENT}>
       {({ loading, error, data }) => {
         if (error) {
           return <p>Error</p>;
@@ -34,7 +34,12 @@ const Landing = () => (
           return <p>Loading</p>;
         }
 
-        return <Media shows={data.getCurrentShows} movies={data.getCurrentMovies} />;
+        return (
+          <Media
+            shows={data.getFeaturedShows}
+            movies={data.getFeaturedMovies}
+          />
+        );
       }}
     </Query>
   </Layout>
