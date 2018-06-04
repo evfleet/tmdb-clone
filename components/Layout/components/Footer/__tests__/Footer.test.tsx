@@ -4,8 +4,13 @@ import "jest-dom/extend-expect";
 
 import Footer from "../Footer";
 
-describe("Footer component renders its content correctly", () => {
-  it("renders without error", () => {
-    const { getByText, getByTestId, container } = render(<Footer />);
+describe("Footer", () => {
+  it("renders the proper TMDb attribution text", () => {
+    const { queryByText } = render(<Footer />);
+    const attribution = queryByText(
+      "This product uses the TMDb API but is not endorsed or certified by TMDb."
+    );
+
+    expect(attribution).toBeInTheDOM();
   });
 });
