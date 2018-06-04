@@ -11,16 +11,16 @@
 }
 
 .shows-content {
-  @media screen and (min-width: 900px) {
-    grid-template-columns: 1fr 1fr;
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: 250px 250px;
     grid-template-rows: 1fr 0.5fr;
     grid-gap: 0px;
   }
 }
 
 .movies-content {
-  @media screen and (min-width: 900px) {
-    grid-template-columns: 1fr 1fr;
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: 250px 250px;
     grid-template-rows: 0.5fr 1fr;
     grid-gap: 0px;
   }
@@ -31,6 +31,7 @@
   float: none;
   overflow: hidden;
   width: auto;
+  max-width: 500px;
   color: #fff;
   font-family: "Source Sans Pro", sans-serf;
   text-shadow: 1px 1px 0 #000;
