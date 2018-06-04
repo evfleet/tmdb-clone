@@ -28,11 +28,11 @@ class Media extends React.Component<IMediaProps> {
     return this.props.movies.map(
       ({ actors, backdrop_path, title }: ICurrentMovie, index) => {
         const key = `movie-${index}`;
-        let classes = `${styles.item} ${styles.movie}`;
+        let classes = `${styles.item}`;
         let actorCount = 2;
 
         if (index === 0) {
-          classes = `${classes} ${styles["movie-highlighted"]}`;
+          classes = `${classes} ${styles["highlighted-movie"]}`;
           actorCount = 3;
         }
 
@@ -57,11 +57,11 @@ class Media extends React.Component<IMediaProps> {
       ({ backdrop_path, name, next_air_date }: ICurrentShow, index) => {
         const key = `show-${index}`;
         const dayDiff = parseInt(next_air_date.slice(-2), 10) - day;
-        let classes = `${styles.item} ${styles.show}`;
+        let classes = `${styles.item}`;
         let dateText = "";
 
         if (index === 0) {
-          classes = `${classes} ${styles["show-highlighted"]}`;
+          classes = `${classes} ${styles["highlighted-show"]}`;
         }
 
         switch (dayDiff) {
@@ -94,17 +94,13 @@ class Media extends React.Component<IMediaProps> {
         <div className={styles.container}>
           <h2>On TV</h2>
 
-          <div className={`${styles.content} ${styles["shows-content"]}`}>
-            {this.renderShows()}
-          </div>
+          <div className={styles.content}>{this.renderShows()}</div>
         </div>
 
         <div className={styles.container}>
           <h2>In Theaters</h2>
 
-          <div className={`${styles.content} ${styles["movies-content"]}`}>
-            {this.renderMovies()}
-          </div>
+          <div className={styles.content}>{this.renderMovies()}</div>
         </div>
       </div>
     );
