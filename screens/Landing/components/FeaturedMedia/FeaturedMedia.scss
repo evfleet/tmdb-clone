@@ -2,7 +2,7 @@
 
 $column-width: calc(#{$max-grid-width} / 4);
 
-.featured-media {
+.wrapper {
   display: flex;
 }
 
@@ -55,9 +55,4 @@ $column-width: calc(#{$max-grid-width} / 4);
 .highlighted-movie {
   grid-column: 1 / -1;
   grid-row: 2 / 2;
-}
-
-.subheader {
-  font-size: 1.2em;
-  font-weight: 600;
 }

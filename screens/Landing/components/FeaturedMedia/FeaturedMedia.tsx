@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Link } from "../../../../config/routes";
+
 import styles from "./FeaturedMedia.scss";
 import MediaImage from "./components/MediaImage";
 
@@ -54,7 +56,7 @@ class FeaturedMedia extends React.Component<IMediaProps> {
     const day = today.getDate();
 
     return this.props.shows.map(
-      ({ backdrop_path, name, next_air_date }: ICurrentShow, index) => {
+      ({ backdrop_path, id, name, next_air_date }: ICurrentShow, index) => {
         const key = `show-${index}`;
         const dayDiff = parseInt(next_air_date.slice(-2), 10) - day;
         let classes = `${styles.item}`;
@@ -77,11 +79,15 @@ class FeaturedMedia extends React.Component<IMediaProps> {
 
         return (
           <div key={key} className={classes}>
-            <MediaImage name={name} path={backdrop_path} />
-            <div className={styles["item-text"]}>
-              <h3>{name}</h3>
-              <span>New episode airs {`${dateText}`}</span>
-            </div>
+            <Link route={`/tv/${id}`}>
+              <a>
+                <MediaImage name={name} path={backdrop_path} />
+                <div className={styles["item-text"]}>
+                  <h3>{name}</h3>
+                  <span>New episode airs {`${dateText}`}</span>
+                </div>
+              </a>
+            </Link>
           </div>
         );
       }
@@ -90,23 +96,17 @@ class FeaturedMedia extends React.Component<IMediaProps> {
 
   public render() {
     return (
-      <React.Fragment>
-        <div className={styles["featured-media"]}>
-          <div className={styles.container}>
-            <h2 className={styles.header}>On TV</h2>
-            <div className={styles.content}>{this.renderShows()}</div>
-          </div>
-
-          <div className={styles.container}>
-            <h2 className={styles.header}>In Theaters</h2>
-            <div className={styles.content}>{this.renderMovies()}</div>
-          </div>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <h2 className={styles.header}>On TV</h2>
+          <div className={styles.content}>{this.renderShows()}</div>
         </div>
 
-        <div />
-
-        <h2 className={styles.subheader}>Featured Lists</h2>
-      </React.Fragment>
+        <div className={styles.container}>
+          <h2 className={styles.header}>In Theaters</h2>
+          <div className={styles.content}>{this.renderMovies()}</div>
+        </div>
+      </div>
     );
   }
 }

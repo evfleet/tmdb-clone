@@ -8,7 +8,7 @@
     "test": "jest --watch",
     "dev": "nodemon app/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
-    "start": "cross-env NODE_ENV=production node .next/production-server/index.js"
+    "start": "cross-env NODE_ENV=production node .next/app/index.js"
   },
   "dependencies": {
     "apollo-boost": "^0.1.7",
@@ -22,6 +22,7 @@
     "isomorphic-unfetch": "^2.0.0",
     "moment": "^2.22.2",
     "next": "^6.0.3",
+    "next-routes": "^1.4.2",
     "promise-redis": "^0.0.5",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",

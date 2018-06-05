@@ -8,12 +8,14 @@ import { graphiqlExpress, graphqlExpress } from "apollo-server-express";
 import * as redis from "promise-redis";
 
 import schema from "./schema";
+import routes from "../config/routes";
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== "production";
 
 const app = next({ dev });
 const handle = app.getRequestHandler();
+const handler = routes.getRequestHandler(app);
 const client = redis().createClient();
 
 app.prepare().then(() => {
@@ -32,6 +34,8 @@ app.prepare().then(() => {
       schema
     })
   );
+
+  server.use(handler);
 
   server.get("*", (req, res) => handle(req, res));
 
