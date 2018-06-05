@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
 import Layout from "../../components/Layout";
-import Media from "./components/Media";
+import FeaturedMedia from "./components/FeaturedMedia";
 
 const FETCH_FEATURED_CONTENT = gql`
   query fetchFeaturedContent {
@@ -35,7 +35,7 @@ const Landing = () => (
         }
 
         return (
-          <Media
+          <FeaturedMedia
             shows={data.getFeaturedShows}
             movies={data.getFeaturedMovies}
           />

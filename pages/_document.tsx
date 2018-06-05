@@ -5,7 +5,10 @@ class CustomDocument extends Document {
     return (
       <html>
         <Head>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600"
+          />
           <style>
             {`
               html, body {

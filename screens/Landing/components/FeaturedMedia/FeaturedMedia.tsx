@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import styles from "./Media.scss";
+import styles from "./FeaturedMedia.scss";
 import MediaImage from "./components/MediaImage";
 
 export interface ICurrentShow {
@@ -23,7 +23,7 @@ interface IMediaProps {
   movies: [ICurrentMovie];
 }
 
-class Media extends React.Component<IMediaProps> {
+class FeaturedMedia extends React.Component<IMediaProps> {
   public renderMovies() {
     return this.props.movies.map(
       ({ actors, backdrop_path, title }: ICurrentMovie, index) => {
@@ -90,21 +90,25 @@ class Media extends React.Component<IMediaProps> {
 
   public render() {
     return (
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <h2>On TV</h2>
+      <React.Fragment>
+        <div className={styles["featured-media"]}>
+          <div className={styles.container}>
+            <h2 className={styles.header}>On TV</h2>
+            <div className={styles.content}>{this.renderShows()}</div>
+          </div>
 
-          <div className={styles.content}>{this.renderShows()}</div>
+          <div className={styles.container}>
+            <h2 className={styles.header}>In Theaters</h2>
+            <div className={styles.content}>{this.renderMovies()}</div>
+          </div>
         </div>
 
-        <div className={styles.container}>
-          <h2>In Theaters</h2>
+        <div />
 
-          <div className={styles.content}>{this.renderMovies()}</div>
-        </div>
-      </div>
+        <h2 className={styles.subheader}>Featured Lists</h2>
+      </React.Fragment>
     );
   }
 }
 
-export default Media;
+export default FeaturedMedia;
